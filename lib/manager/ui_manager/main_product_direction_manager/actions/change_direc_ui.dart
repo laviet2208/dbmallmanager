@@ -5,7 +5,8 @@ import '../../../../data/product/ProductDirectory.dart';
 import '../../../../general_ingredient/utils.dart';
 
 class change_direc_ui extends StatefulWidget {
-  const change_direc_ui({super.key});
+  final String id;
+  const change_direc_ui({super.key, required this.id});
 
   @override
   State<change_direc_ui> createState() => _change_direc_uiState();
@@ -17,10 +18,10 @@ class _change_direc_uiState extends State<change_direc_ui> {
   List<ProductDirectory> filteredList = [];
   final List<ProductDirectory> directory_type = [];
 
-  static Future<void> change_direct(String id) async{
+  Future<void> change_direct(String idn) async{
     try {
       DatabaseReference databaseRef = FirebaseDatabase.instance.ref();
-      await databaseRef.child("UI").child('maindirectory').set(id);
+      await databaseRef.child("UI").child(widget.id).set(idn);
     } catch (error) {
       print('Đã xảy ra lỗi khi đẩy catchOrder: $error');
       throw error;

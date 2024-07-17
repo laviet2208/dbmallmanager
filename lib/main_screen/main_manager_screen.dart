@@ -5,6 +5,7 @@ import 'package:dbmallmanager/manager/ui_manager/main_product_direction_manager/
 import 'package:dbmallmanager/manager/ui_manager/type_show_manager/type_show_manager_main.dart';
 import 'package:dbmallmanager/manager/ui_manager/type_show_type_2_manager/type_show_type_2_manager_main.dart';
 import 'package:dbmallmanager/manager/ui_manager/ui_manager_main.dart';
+import 'package:dbmallmanager/manager/voucher_manager/voucher_manager_main.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import '../data/finalData.dart';
@@ -65,7 +66,7 @@ class _main_manager_screenState extends State<main_manager_screen> {
     }
 
     if (init == 12) {
-
+      return voucher_manager_main();
     }
 
     if (init == 13) {

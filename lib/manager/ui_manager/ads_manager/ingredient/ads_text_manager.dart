@@ -23,7 +23,6 @@ class _ads_text_managerState extends State<ads_text_manager> {
   void get_ads() {
     if (widget.id != '') {
       final reference = FirebaseDatabase.instance.ref();
-
       reference.child("Ads/TextAds").child(widget.id).onValue.listen((event) {
         final dynamic data = event.snapshot.value;
         ads = TextAds.fromJson(data);
