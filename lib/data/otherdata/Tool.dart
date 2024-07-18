@@ -1,5 +1,7 @@
 import 'dart:math';
+import 'package:dbmallmanager/data/orderData/Order.dart';
 import 'package:flutter/material.dart';
+import '../cartData/CartData.dart';
 import '../voucherData/Voucher.dart';
 import 'Time.dart';
 
@@ -22,6 +24,14 @@ int calculateDiscountPercentage(double originalPrice, double discountedPrice) {
   double discount = ((originalPrice - discountedPrice) / originalPrice) * 100;
   // Làm tròn về số nguyên
   return discount.round();
+}
+
+double calculatetotalMoney(Order order) {
+  double cost = 0;
+  for (Cartdata cartdata in order.productList) {
+    cost = cost + cartdata.product.cost * cartdata.number;
+  }
+  return cost;
 }
 
 double getVoucherSale(Voucher voucher, double cost) {

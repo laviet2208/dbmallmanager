@@ -1,3 +1,6 @@
+import 'package:dbmallmanager/manager/customer_manager/customer_manager.dart';
+import 'package:dbmallmanager/manager/notice_manager/notice_manager_main.dart';
+import 'package:dbmallmanager/manager/order_manager/order_manager_main.dart';
 import 'package:dbmallmanager/manager/product_manager/product_directory/product_directory_main.dart';
 import 'package:dbmallmanager/manager/product_manager/product_list/product_list_main.dart';
 import 'package:dbmallmanager/manager/ui_manager/ads_manager/ads_manager_main.dart';
@@ -38,7 +41,7 @@ class _main_manager_screenState extends State<main_manager_screen> {
     }
 
     if (init == 5) {
-
+      return notice_manager_main();
     }
 
     if (init == 6) {
@@ -46,7 +49,7 @@ class _main_manager_screenState extends State<main_manager_screen> {
     }
 
     if (init == 7) {
-
+      return order_manager_main();
     }
 
     if (init == 8) {
@@ -54,7 +57,7 @@ class _main_manager_screenState extends State<main_manager_screen> {
     }
 
     if (init == 9) {
-
+      return customer_manager();
     }
 
     if (init == 10) {
@@ -321,15 +324,6 @@ class _main_manager_screenState extends State<main_manager_screen> {
                                     });
                                   },
                                 ),
-
-                                GestureDetector(
-                                  child: feature_type_1(selectButton: finalData.selectButton, title: 'Thêm đơn hàng', thisIndex: 8,),
-                                  onTap: () {
-                                    setState(() {
-                                      finalData.selectButton = 8;
-                                    });
-                                  },
-                                ),
                               ],
                             ),
 
@@ -448,14 +442,14 @@ class _main_manager_screenState extends State<main_manager_screen> {
                                   )
                               ),
                               children: [
-                                GestureDetector(
-                                  child: feature_type_1(selectButton: finalData.selectButton, title: 'Danh mục gdiện chính', thisIndex: 14,),
-                                  onTap: () {
-                                    setState(() {
-                                      finalData.selectButton = 14;
-                                    });
-                                  },
-                                ),
+                                // GestureDetector(
+                                //   child: feature_type_1(selectButton: finalData.selectButton, title: 'Danh mục gdiện chính', thisIndex: 14,),
+                                //   onTap: () {
+                                //     setState(() {
+                                //       finalData.selectButton = 14;
+                                //     });
+                                //   },
+                                // ),
 
                                 GestureDetector(
                                   child: feature_type_1(selectButton: finalData.selectButton, title: 'Quản lý quảng cáo', thisIndex: 15,),
@@ -489,6 +483,48 @@ class _main_manager_screenState extends State<main_manager_screen> {
                                   onTap: () {
                                     setState(() {
                                       finalData.selectButton = 13;
+                                    });
+                                  },
+                                ),
+                              ],
+                            ),
+
+                            Container(
+                              height: 1,
+                              decoration: BoxDecoration(
+                                  color: Colors.white
+                              ),
+                            ),
+
+                            ExpansionTile(
+                              leading: Icon(
+                                Icons.notifications_active_outlined,
+                                color: Colors.white,
+                              ),
+                              iconColor: Colors.white,
+                              collapsedIconColor: Colors.white,
+                              title: Container(
+                                  alignment: Alignment.centerLeft,
+                                  child : Padding(
+                                    padding: EdgeInsets.only(top: 15,bottom: 15),
+                                    child: Text(
+                                      'Quản lý thông báo',
+                                      textAlign: TextAlign.start,
+                                      style: TextStyle(
+                                        fontFamily: 'muli',
+                                        fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                    ),
+                                  )
+                              ),
+                              children: [
+                                GestureDetector(
+                                  child: feature_type_1(selectButton: finalData.selectButton, title: 'Danh sách thông báo', thisIndex: 5,),
+                                  onTap: () {
+                                    setState(() {
+                                      finalData.selectButton = 5;
                                     });
                                   },
                                 ),
