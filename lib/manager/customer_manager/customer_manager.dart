@@ -70,7 +70,7 @@ class _customer_managerState extends State<customer_manager> {
                 itemCount: keyList.length,
                 padding: EdgeInsets.zero,
                 itemBuilder: (context, index) {
-                  return item_customer(id: keyList[index], index: index);
+                  return item_customer(id: keyList.reversed.toList()[index], index: index);
                 },
               ),
             ),

@@ -1,6 +1,7 @@
 import 'package:dbmallmanager/data/otherdata/Tool.dart';
 import 'package:dbmallmanager/manager/customer_manager/actions/change_account_money.dart';
 import 'package:dbmallmanager/manager/customer_manager/actions/view_account_info.dart';
+import 'package:dbmallmanager/manager/customer_manager/ingredient/voucher_manager/voucher_manager.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class item_customer extends StatefulWidget {
 }
 
 class _item_customerState extends State<item_customer> {
-  Account account = Account(id: '', username: '', password: '', address: '', createTime: Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0), money: 0, firstName: '', lastName: '', phoneNum: '', lockstatus: 0);
+  Account account = Account(id: '', username: '', password: '', address: '', createTime: Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0), money: 0, firstName: '', lastName: '', phoneNum: '', lockstatus: 0, voucherList: []);
 
   void get_account() {
     if (widget.id != '') {
@@ -244,6 +245,40 @@ class _item_customerState extends State<item_customer> {
                           context: context,
                           builder: (context) {
                             return view_account_info(account: account);
+                          },
+                        );
+                      },
+                    ),
+                  ),
+
+                  Container(height: 4,),
+
+                  Padding(
+                    padding: EdgeInsets.only(left: 10, right: 10),
+                    child: GestureDetector(
+                      child: Container(
+                        height: 30,
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                          border: Border.all(
+                              width: 1,
+                              color: Colors.black
+                          ),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Quản lý voucher',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return voucher_manager(account: account);
                           },
                         );
                       },
