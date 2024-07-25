@@ -93,7 +93,7 @@ class _item_product_in_directoryState extends State<item_product_in_directory> {
           Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              getStringNumber(product.cost) + ' VND',
+              getStringNumber(product.cost) + ' USD',
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
@@ -113,7 +113,7 @@ class _item_product_in_directoryState extends State<item_product_in_directory> {
               text: TextSpan(
                 children: <TextSpan>[
                   TextSpan(
-                    text: getStringNumber(product.costBeforeSale) + ' VND',
+                    text: getStringNumber(product.costBeforeSale) + ' USD',
                     style: TextStyle(
                       fontSize: width / 35,
                       fontFamily: 'muli',

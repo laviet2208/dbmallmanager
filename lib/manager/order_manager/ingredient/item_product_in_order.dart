@@ -96,11 +96,11 @@ class _item_product_in_orderState extends State<item_product_in_order> {
 
                   Container(height: 8,),
 
-                  text_line_in_item(color: Colors.black,title: 'Đơn giá: ', content: getStringNumber(widget.cartdata.product.cost) + '.vnđ'),
+                  text_line_in_item(color: Colors.black,title: 'Đơn giá: ', content: getStringNumber(widget.cartdata.product.cost) + '.usd'),
 
                   Container(height: 8,),
 
-                  text_line_in_item(color: Colors.black,title: 'Thành tiền: ', content: getStringNumber(widget.cartdata.product.cost * widget.cartdata.number) + '.đ'),
+                  text_line_in_item(color: Colors.black,title: 'Thành tiền: ', content: getStringNumber(widget.cartdata.product.cost * widget.cartdata.number) + '.usd'),
 
                   Container(height: 10,),
                 ],

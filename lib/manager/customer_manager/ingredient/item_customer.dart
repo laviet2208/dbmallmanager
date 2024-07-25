@@ -1,6 +1,7 @@
 import 'package:dbmallmanager/data/otherdata/Tool.dart';
 import 'package:dbmallmanager/manager/customer_manager/actions/change_account_money.dart';
 import 'package:dbmallmanager/manager/customer_manager/actions/view_account_info.dart';
+import 'package:dbmallmanager/manager/customer_manager/ingredient/chat_manager/chat_room/chat_room.dart';
 import 'package:dbmallmanager/manager/customer_manager/ingredient/voucher_manager/voucher_manager.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -105,7 +106,7 @@ class _item_customerState extends State<item_customer> {
 
                   Container(height: 4,),
 
-                  text_line_in_item(color: Colors.black,title: 'Số dư: ', content: getStringNumber(account.money) + '.vnđ'),
+                  text_line_in_item(color: Colors.black,title: 'Số dư: ', content: getStringNumber(account.money) + '.usd'),
 
                   Container(height: 4,),
                 ],
@@ -279,6 +280,52 @@ class _item_customerState extends State<item_customer> {
                           context: context,
                           builder: (context) {
                             return voucher_manager(account: account);
+                          },
+                        );
+                      },
+                    ),
+                  ),
+
+                  Container(height: 4,),
+
+                  Padding(
+                    padding: EdgeInsets.only(left: 10, right: 10),
+                    child: GestureDetector(
+                      child: Container(
+                        height: 30,
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                          border: Border.all(
+                              width: 1,
+                              color: Colors.black
+                          ),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Chat với KH',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              content: Container(
+                                width: 400,
+                                height: 800,
+                                child: chatRoomScreen(account: account),
+                              ),
+                              actions: <Widget>[
+                                TextButton(
+                                  onPressed: () {Navigator.of(context).pop();},
+                                  child: Text('Đóng'),
+                                ),
+                              ],
+                            );
                           },
                         );
                       },

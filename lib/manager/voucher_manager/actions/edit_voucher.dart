@@ -474,7 +474,7 @@ class _edit_voucherState extends State<edit_voucher> {
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: 'Áp dụng cho đơn từ(VNĐ - chỉ nhập mình số)',
+                          hintText: 'Áp dụng cho đơn từ(USD - chỉ nhập mình số)',
                           hintStyle: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
@@ -666,7 +666,7 @@ class _edit_voucherState extends State<edit_voucher> {
             Padding(
               padding: EdgeInsets.only(left: 10),
               child: Text(
-                typeIndex == 1 ? 'Số tiền giảm (Đơn vị : VNĐ)*' : 'Số phần trăm giảm (không có phần thập phân)*',
+                typeIndex == 1 ? 'Số tiền giảm (Đơn vị : USD)*' : 'Số phần trăm giảm (không có phần thập phân)*',
                 style: TextStyle(
                   fontFamily: 'muli',
                   fontSize: 14,
@@ -734,7 +734,7 @@ class _edit_voucherState extends State<edit_voucher> {
             Padding(
               padding: EdgeInsets.only(left: 10),
               child: Text(
-                'Số tiền giảm tối đa(VNĐ)',
+                'Số tiền giảm tối đa(USD)',
                 style: TextStyle(
                   fontFamily: 'muli',
                   fontSize: typeIndex == 0 ? 14 : 0,

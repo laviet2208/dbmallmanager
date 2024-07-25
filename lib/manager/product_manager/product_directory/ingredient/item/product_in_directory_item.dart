@@ -146,11 +146,11 @@ class _product_in_directory_itemState extends State<product_in_directory_item> {
 
                   Container(height: 8,),
 
-                  text_line_in_item(color: Colors.black,title: 'Giá tiền thực: ', content: getStringNumber(product.cost) + '.đ'),
+                  text_line_in_item(color: Colors.black,title: 'Giá tiền thực: ', content: getStringNumber(product.cost) + '.usd'),
 
                   Container(height: 8,),
 
-                  text_line_in_item(color: Colors.black,title: 'Giá tiền trước giảm: ', content: getStringNumber(product.costBeforeSale) + '.đ'),
+                  text_line_in_item(color: Colors.black,title: 'Giá tiền trước giảm: ', content: getStringNumber(product.costBeforeSale) + '.usd'),
 
                   Container(height: 10,),
                 ],

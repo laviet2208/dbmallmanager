@@ -256,7 +256,7 @@ class _voucher_itemState extends State<voucher_item> {
                             ),
                           ),
                           TextSpan(
-                            text: (voucher.type == 1) ? (getStringNumber(voucher.Money) + 'VNĐ') : (getStringNumber(voucher.Money) + '%'), // Phần còn lại viết bình thường
+                            text: (voucher.type == 1) ? (getStringNumber(voucher.Money) + 'USD') : (getStringNumber(voucher.Money) + '%'), // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
                               fontFamily: 'muli',
@@ -285,7 +285,7 @@ class _voucher_itemState extends State<voucher_item> {
                             ),
                           ),
                           TextSpan(
-                            text: getStringNumber(voucher.mincost) + 'VNĐ', // Phần còn lại viết bình thường
+                            text: getStringNumber(voucher.mincost) + 'USD', // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
                               fontFamily: 'muli',
@@ -314,7 +314,7 @@ class _voucher_itemState extends State<voucher_item> {
                             ),
                           ),
                           TextSpan(
-                            text: getStringNumber(voucher.maxSale) + 'VNĐ', // Phần còn lại viết bình thường
+                            text: getStringNumber(voucher.maxSale) + 'USD', // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: voucher.type == 1 ? 0 : 16,
                               fontFamily: 'muli',

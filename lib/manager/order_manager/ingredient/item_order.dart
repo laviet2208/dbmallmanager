@@ -199,15 +199,15 @@ class _item_orderState extends State<item_order> {
                 children: [
                   Container(height: 4,),
 
-                  text_line_in_item(color: Colors.black,title: 'Giá gốc : ', content: getStringNumber(calculatetotalMoney(order)) + '.vnđ'),
+                  text_line_in_item(color: Colors.black,title: 'Giá gốc : ', content: getStringNumber(calculatetotalMoney(order)) + '.usd'),
 
                   Container(height: 8,),
 
-                  text_line_in_item(color: Colors.black, title: 'Voucher: ', content: getStringNumber(getVoucherSale(order.voucher, calculatetotalMoney(order))) + '.vnđ'),
+                  text_line_in_item(color: Colors.black, title: 'Voucher: ', content: getStringNumber(getVoucherSale(order.voucher, calculatetotalMoney(order))) + '.usd'),
 
                   Container(height: 8,),
 
-                  text_line_in_item(color: Colors.black,title: 'Thực thu: ', content: getStringNumber(calculatetotalMoney(order) - getVoucherSale(order.voucher, calculatetotalMoney(order))) + '.vnđ'),
+                  text_line_in_item(color: Colors.black,title: 'Thực thu: ', content: getStringNumber(calculatetotalMoney(order) - getVoucherSale(order.voucher, calculatetotalMoney(order))) + '.usd'),
 
                   TextButton(
                     onPressed: () {
